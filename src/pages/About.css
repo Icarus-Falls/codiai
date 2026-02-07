@@ -1,0 +1,41 @@
+.about-container {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.about-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-intro {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 40px;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.about-content {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  background: #1e1e2f;
+  padding: 25px;
+  border-radius: 10px;
+  width: 280px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.about-card h3 {
+  margin-bottom: 10px;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  color: #bbb;
+}

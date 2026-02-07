@@ -1,0 +1,243 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    /* Removes default browser spacing */
+    font-family: "Poppins", sans-serif;
+    /* Modern clean font */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    /* Dark gradient background */
+    color: white;
+    /* Default text color */
+}
+
+section {
+    padding: 80px 10%;
+    /* Space inside each section (top/bottom, left/right) */
+    text-align: center;
+    /* Center align content */
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    /* Places items side by side */
+    justify-content: space-between;
+    /* Space between text & preview */
+    align-items: center;
+    /* Vertical alignment */
+    min-height: 85vh;
+    /* Takes 85% of screen height */
+}
+
+.hero-text {
+    flex: 1;
+    /* Takes equal space */
+    text-align: left;
+    /* Align text to left */
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    /* Large heading */
+    background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+    /* Gradient text */
+    -webkit-background-clip: text;
+    /* Clips gradient to text */
+    -webkit-text-fill-color: transparent;
+    /* Makes gradient visible */
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin: 20px 0;
+    /* Space above & below paragraph */
+    color: #d1d1ff;
+    /* Light purple text */
+}
+
+.hero-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    /* Centers chat box */
+}
+
+/* CHAT PREVIEW */
+.chat-box {
+    background: rgba(255, 255, 255, 0.08);
+    /* Transparent glass look */
+    backdrop-filter: blur(10px);
+    /* Blur behind it (glassmorphism) */
+    padding: 25px;
+    border-radius: 16px;
+    /* Rounded corners */
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Soft shadow */
+}
+
+/* BUTTON */
+.primary-btn {
+    padding: 14px 28px;
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    /* Pink gradient */
+    border: none;
+    border-radius: 30px;
+    /* Pill shape */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    /* Smooth hover animation */
+}
+
+.primary-btn:hover {
+    transform: scale(1.05);
+    /* Slightly bigger on hover */
+    box-shadow: 0 0 15px #ff7eb3;
+    /* Glow effect */
+}
+
+/* FEATURES */
+.features h2 {
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    /* Cards in row */
+    justify-content: center;
+    gap: 25px;
+    /* Space between cards */
+    flex-wrap: wrap;
+    /* Moves to next line on small screens */
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 14px;
+    width: 220px;
+    transition: 0.3s;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    /* Moves up */
+    background: rgba(255, 255, 255, 0.15);
+    /* Brighter on hover */
+}
+
+/* STEPS */
+.steps h2 {
+    margin-bottom: 25px;
+}
+
+/* STEP TITLE BOX */
+.steps-title-box {
+    display: inline-block;
+    /* Shrinks to content width */
+    padding: 15px 40px;
+    margin-bottom: 40px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+.steps-title-box h2 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 1px;
+    /* Spacing between letters */
+}
+
+.steps-title-box:hover {
+    transform: scale(1.08);
+    /* Grows on hover */
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* STEP CARDS */
+.step-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.step-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    padding: 20px 25px;
+    border-radius: 12px;
+    width: 220px;
+    transition: 0.3s;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(90deg, #ff758c, #4426c9);
+    /* Color change */
+    color: white;
+}
+
+/* CTA SECTION */
+.cta {
+    background: linear-gradient(90deg, #e57285, #9d37bc);
+    border-radius: 20px;
+    margin: 60px 10%;
+    padding: 60px 20px;
+}
+
+.cta h2 {
+    margin-bottom: 20px;
+}
+.contact-container {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.contact-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-container p {
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background: #574fd6;
+}
