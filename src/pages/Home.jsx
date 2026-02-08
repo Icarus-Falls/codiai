@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./Home.css";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar />
@@ -16,7 +19,13 @@ const Home = () => {
             — all in one intelligent AI assistant.
           </p>
           <div className="hero-buttons">
-            <button className="primary-btn">Start Chatting</button>
+            <button
+              className="primary-btn"
+              onClick={() => navigate("/learning")}
+            >
+              Start Chatting
+            </button>
+
             <button className="secondary-btn">Explore Features</button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
 const ai = new GoogleGenAI({ apiKey });
 
@@ -9,6 +9,19 @@ const Learning = () => {
   const [userRequest, setUserRequest] = useState("");
   const [topic, setTopic] = useState("");
   const [messages, setMessages] = useState([]);
+  useEffect(() => {
+    localStorage.setItem("messages", JSON.stringify(messages));
+  }, [messages]);
+  const [isThinking, setIsThinking] = useState(false);
+  useEffect(() => {
+    const localtopic = JSON.parse(localStorage.getItem("topic") || '""'); // <-- string default
+    setTopic(localtopic);
+
+    const localMessages = JSON.parse(localStorage.getItem("messages") || '[]'); // <-- array default
+    setMessages(localMessages);
+  }, [])
+
+
 
 
   const handleRequest = async () => {
@@ -18,6 +31,7 @@ const Learning = () => {
     if (!userRequest || userRequest.trim() === "") {
       return console.log("type your question");
     }
+    setIsThinking(true); // <-- Show "Thinking..." message
 
     localStorage.setItem("topic", JSON.stringify(topic));
     const currentRequest = userRequest.trim();
@@ -85,8 +99,11 @@ Remember: The entire response must strictly follow the JSON schema with both "su
         ...prev,
         { role: "ai", text: aiItem.answer || JSON.stringify(aiItem, null, 2) }
       ]);
+      setIsThinking(false); // <-- Hide "Thinking..." after AI responds
+
     } catch (error) {
       console.log(error, "Error to connect with AI");
+      setIsThinking(false); // <-- hide "Thinking..." on error
     }
   };
 
@@ -95,7 +112,8 @@ Remember: The entire response must strictly follow the JSON schema with both "su
       <Navbar />
 
       {/* Page container to allow footer at the bottom */}
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen relative">
+
 
         <select
           value={topic}
@@ -115,8 +133,8 @@ Remember: The entire response must strictly follow the JSON schema with both "su
 
 
         {/* Chat messages */}
-        <div className="flex justify-center">
-          <div className="w-full max-w-4xl px-4 py-6 space-y-4">
+        <div className="flex justify-center flex-1 overflow-auto">
+          <div className="w-full max-w-4xl px-4 py-6 space-y-4 pb-32">
             {messages.map((msg, index) => (
               <div
                 key={index}
@@ -132,19 +150,32 @@ Remember: The entire response must strictly follow the JSON schema with both "su
                 </div>
               </div>
             ))}
+            {isThinking && (
+              <div className="flex justify-start">
+                <div className="max-w-[75%] px-4 py-3 rounded-2xl text-sm whitespace-pre-wrap bg-zinc-700 text-white rounded-bl-md">
+                  Thinking...
+                </div>
+              </div>
+            )}
+
+
+
+
           </div>
         </div>
 
         {/* Question input */}
         <div className="flex flex-col gap-2 mt-4">
           <label className="text-xs uppercase tracking-widest text-zinc-400">
-            Learning Subject
+
           </label>
 
         </div>
 
         {/* Chat input */}
-        <div className="flex justify-center p-6 bg-zinc-900/40 border-t border-zinc-800 mt-4">
+        <div className="flex justify-center p-6 bg-zinc-900/40 border-t border-zinc-800 fixed bottom-0 left-0 w-full z-50">
+
+
           <div className="w-full max-w-4xl">
             <div className="relative flex items-end gap-2">
               <textarea
@@ -170,10 +201,10 @@ Remember: The entire response must strictly follow the JSON schema with both "su
         </div>
 
         {/* Footer at the very end */}
-        <Footer />
+
       </div>
 
-      <h1>Learning Page</h1>
+
     </>
   );
 };

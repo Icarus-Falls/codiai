@@ -1,13 +1,9 @@
 /* GLOBAL */
 body {
     margin: 0;
-    /* Removes default browser spacing */
     font-family: "Poppins", sans-serif;
-    /* Modern clean font */
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    /* Dark gradient background */
+    background: #070F2B;
     color: white;
-    /* Default text color */
 }
 
 section {
@@ -79,23 +75,24 @@ section {
 /* BUTTON */
 .primary-btn {
     padding: 14px 28px;
-    background: linear-gradient(90deg, #ff758c, #ff7eb3);
-    /* Pink gradient */
+    background: #0AC4E0;
+    /* Button color */
     border: none;
     border-radius: 30px;
-    /* Pill shape */
-    color: white;
+    color: #0D1A63;
+    /* Dark text for contrast */
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
-    /* Smooth hover animation */
 }
+
 
 .primary-btn:hover {
     transform: scale(1.05);
-    /* Slightly bigger on hover */
-    box-shadow: 0 0 15px #ff7eb3;
-    /* Glow effect */
+    background: #08A9C2;
+    /* Slightly darker teal */
+    box-shadow: 0 0 15px #0AC4E0;
+    color: white;
 }
 
 /* FEATURES */
@@ -181,14 +178,13 @@ section {
 
 .step-card:hover {
     transform: translateY(-8px);
-    background: linear-gradient(90deg, #ff758c, #4426c9);
-    /* Color change */
-    color: white;
+    background: linear-gradient(90deg, #0D1A63, #1A2CA3);
+    color: #0AC4E0;
 }
 
 /* CTA SECTION */
 .cta {
-    background: linear-gradient(90deg, #e57285, #9d37bc);
+    background: linear-gradient(135deg, #070F2B, #1A3263);
     border-radius: 20px;
     margin: 60px 10%;
     padding: 60px 20px;
@@ -196,48 +192,51 @@ section {
 
 .cta h2 {
     margin-bottom: 20px;
+    color: #0AC4E0;
+    /* Palette accent color */
 }
+
 .contact-container {
-  padding: 80px 10%;
-  text-align: center;
+    padding: 80px 10%;
+    text-align: center;
 }
 
 .contact-container h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 .contact-container p {
-  margin-bottom: 30px;
-  color: #ccc;
+    margin-bottom: 30px;
+    color: #cccccc;
 }
 
 .contact-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
 }
 
 .contact-form button {
-  padding: 12px;
-  background: #6c63ff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
+    padding: 12px;
+    background: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .contact-form button:hover {
-  background: #574fd6;
+    background: #574fd6;
 }
